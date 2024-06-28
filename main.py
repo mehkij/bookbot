@@ -7,11 +7,24 @@ def count_words(text):
     
     return len(words)
 
+def count_chars(text):
+    characters = {}
+    lowercase = text.lower()
+
+    for char in lowercase:
+        if char in characters:
+            characters[char] += 1
+        else:
+            characters[char] = 1
+    
+    return characters
+
 def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
-    count = count_words(text)
-    print(text)
-    print(count)
+    word_count = count_words(text)
+    char_count = count_chars(text)
+    
+    print(char_count)
 
 main()
