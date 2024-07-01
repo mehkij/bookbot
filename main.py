@@ -1,3 +1,5 @@
+from report import report
+
 def get_book_text(path):
     with open(path) as f:
         return f.read()
@@ -25,6 +27,6 @@ def main():
     word_count = count_words(text)
     char_count = count_chars(text)
     
-    print(char_count)
+    print(report(book_path, word_count, char_count))
 
 main()
